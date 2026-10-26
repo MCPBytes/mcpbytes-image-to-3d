@@ -1,0 +1,61 @@
+mcpbytes-image-to-3d
+Copyright (C) 2026 King Of The Hour, LLC
+
+This program is free software: you can redistribute it and/or modify it under the terms of the
+GNU Affero General Public License, version 3 only (LICENSE). It comes with no warranty.
+
+This software is provided by MCPBytes.com. Tencent is not affiliated with, associated with, sponsoring
+or endorsing it.
+
+Tencent Hunyuan 3D 2.1
+----------------------
+Tencent Hunyuan 3D 2.1 is licensed under the Tencent Hunyuan 3D 2.1 Community License Agreement,
+Copyright © 2025 Tencent. All Rights Reserved. The trademark rights of “Tencent Hunyuan” are owned by
+Tencent or its affiliate.
+
+The folder src/mcpbytes_image_to_3d/vendor/hunyuan3d/ holds code from Tencent's Hunyuan3D 2.1
+(https://github.com/Tencent-Hunyuan/Hunyuan3D-2.1, commit 82920d643c0dc2f7bfd7255f45f62d386edfe60c).
+It is licensed to you by Tencent under that agreement (vendor/hunyuan3d/LICENSE), not under the AGPL;
+Tencent's own notices, including the third-party components in that code, are in
+vendor/hunyuan3d/Notice.txt. Files we changed say so at the top; vendor/hunyuan3d/README.md lists every
+change and every file left out.
+
+Tencent's agreement binds your use of that code and of the Hunyuan3D 2.1 model weights, whatever
+licence covers the rest of this program. In short (the agreement governs): it does not apply in the
+European Union, the United Kingdom or South Korea and grants no rights there; use must follow its
+Acceptable Use Policy (Exhibit A); outputs must not be used to improve any other AI model; and anyone
+whose products or services had more than 1 million monthly active users in May 2025 needs a licence
+from Tencent first.
+
+Additional permission under GNU AGPL version 3 section 7: if you modify this program, or any covered
+work, by linking or combining it with Tencent Hunyuan 3D 2.1 (or a modified version of it), containing
+parts covered by the terms of the Tencent Hunyuan 3D 2.1 Community License Agreement, King Of The Hour,
+LLC grants you additional permission to convey the resulting work. Corresponding Source for a
+non-source form of such a combination shall include the source code for the parts of Tencent Hunyuan
+3D 2.1 used as well as that of the covered work.
+
+Generated models
+----------------
+The models, textures and previews this program generates are not covered by the AGPL, and Tencent
+claims no rights in them. You are responsible for them and for the images you supply: use images you
+have the right to use. Tencent's restrictions on outputs above still apply.
+
+Model weights
+-------------
+This package contains no model weights. On first use it downloads these files, at pinned commits or
+checksums, from their publishers; they are licensed to you by their publishers, not by us:
+
+- Hunyuan3D 2.1 shape (hunyuan3d-dit-v2-1) and texture (hunyuan3d-paintpbr-v2-1) models by Tencent,
+  Tencent Hunyuan 3D 2.1 Community License Agreement: https://huggingface.co/tencent/Hunyuan3D-2.1
+- DINOv2 giant by Meta, Apache-2.0: https://huggingface.co/facebook/dinov2-giant
+- Real-ESRGAN x4plus by Xintao Wang and others, BSD-3-Clause: https://github.com/xinntao/Real-ESRGAN
+- U²-Net (u2net.onnx, as distributed by rembg) by Xuebin Qin and others, Apache-2.0:
+  https://github.com/xuebinqin/U-2-Net, https://github.com/danielgatis/rembg
+
+Runtime libraries
+-----------------
+Installed separately by your package manager under their own licences, including PyTorch and
+torchvision, NumPy, SciPy, scikit-image, OmegaConf and pooch (BSD-3-Clause), Diffusers, Transformers,
+Accelerate, safetensors, huggingface_hub, timm, OpenCV, DracoPy and Ninja (Apache-2.0), trimesh,
+xatlas, fast-simplification, einops, rembg, pymatting, ONNX Runtime, PyYAML and the MCP Python SDK
+(MIT), numba (BSD-2-Clause), tqdm (MPL-2.0 and MIT) and Pillow (MIT-CMU).
