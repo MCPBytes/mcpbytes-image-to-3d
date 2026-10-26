@@ -35,16 +35,17 @@ finished model from six sides, as written to `model_preview.png`.
 - The CUDA 12 toolkit (`nvcc`) and a C++ compiler (`g++`). Hunyuan3D has two native extensions, its texture
   rasterizer and its mesh inpainter; they are compiled for your GPU the first time and cached.
 - About 19 GB of disk for the model files, downloaded once, and about 16 GB for the Python packages (PyTorch with CUDA).
-- [uv](https://docs.astral.sh/uv/) (or Python 3.11–3.12 with pip).
+- [uv](https://docs.astral.sh/uv/) (or Python 3.11 or 3.12 with pip).
 - No NVIDIA GPU (an Apple Silicon Mac, for example)? Use `--cloud` with an MCPBytes API key; see below.
 
 ## Install and run
 
 ```bash
-uvx --torch-backend=auto mcpbytes-image-to-3d chair.jpg
+uvx --python 3.12 --torch-backend=auto mcpbytes-image-to-3d chair.jpg
 ```
 
-`--torch-backend=auto` installs the CUDA build of PyTorch that matches your driver. With pip:
+`--python 3.12`: Hunyuan3D's libraries need Python 3.11 or 3.12, and uv would otherwise pick its newest Python.
+`--torch-backend=auto` installs the CUDA build of PyTorch that matches your driver. With pip (on Python 3.11 or 3.12):
 `pip install mcpbytes-image-to-3d --extra-index-url https://download.pytorch.org/whl/cu128`.
 
 The first run downloads the pinned files listed below (about 19 GB, resumable) and compiles the extensions (111 s in
@@ -78,13 +79,13 @@ Add this to your MCP client's configuration (for example `claude_desktop_config.
   "mcpServers": {
     "image-to-3d": {
       "command": "uvx",
-      "args": ["--torch-backend=auto", "mcpbytes-image-to-3d", "--mcp"]
+      "args": ["--python", "3.12", "--torch-backend=auto", "mcpbytes-image-to-3d", "--mcp"]
     }
   }
 }
 ```
 
-Run `uvx --torch-backend=auto mcpbytes-image-to-3d --download` once first. A 19 GB download would outlast any
+Run `uvx --python 3.12 --torch-backend=auto mcpbytes-image-to-3d --download` once first. A 19 GB download would outlast any
 client's timeout, so the tool asks for it instead of starting it. The server provides one tool,
 `create_3d_model_from_image`, which takes the absolute path of an image, an optional `seed` and an optional
 `output_dir`. It writes the files, returns their summary and shows the six-view preview so the model can look at
@@ -99,8 +100,8 @@ it. Files go to `~/mcpbytes/image-to-3d/<timestamp>/` unless the call passes `ou
 
 ```bash
 export MCPBYTES_API_KEY=...
-uvx mcpbytes-image-to-3d chair.jpg --cloud
-uvx mcpbytes-image-to-3d --mcp --cloud     # the MCP server, backed by the hosted tool
+uvx --python 3.12 mcpbytes-image-to-3d chair.jpg --cloud
+uvx --python 3.12 mcpbytes-image-to-3d --mcp --cloud     # the MCP server, backed by the hosted tool
 ```
 
 The model files are the same; `generation.json` is the hosted service's, and there is no `provenance.json`. The run

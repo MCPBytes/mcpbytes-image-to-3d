@@ -6,7 +6,7 @@
   mcpbytes-image-to-3d --download                fetch the pinned model files (~19 GB) and stop
   mcpbytes-image-to-3d --mcp                     serve create_3d_model_from_image over MCP (stdio)
 
-Run it with `uvx --torch-backend=auto mcpbytes-image-to-3d ...`: uv installs the PyTorch build for your GPU.
+Run it with `uvx --python 3.12 --torch-backend=auto mcpbytes-image-to-3d ...`: uv installs the PyTorch build for your GPU.
 """
 
 import argparse

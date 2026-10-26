@@ -1,6 +1,6 @@
 [project]
 name = "mcpbytes-image-to-3d"
-version = "0.1.0"
+version = "0.1.1"
 description = "Turn one image into a textured 3D model (GLB) with Tencent's Hunyuan3D 2.1, on your own GPU. CLI and MCP server."
 readme = "README.md"
 license = "AGPL-3.0-only AND LicenseRef-Tencent-Hunyuan-3D-2.1-Community"
